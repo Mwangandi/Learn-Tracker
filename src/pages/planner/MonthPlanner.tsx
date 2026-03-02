@@ -4,13 +4,13 @@ import Card from '@/components/Card'
 import ProgressBar from '@/components/ProgressBar'
 
 const MonthPlanner: React.FC = () => {
-  const { projectMonths, projectDays, activeProject, updateMonth, projectMeta } = useProject()
+  const { projectMonths, projectDays, activeProject, updateMonth } = useProject()
   const taStyle: React.CSSProperties = { width: '100%', background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text)', borderRadius: 8, padding: '8px 12px', fontSize: 12, fontFamily: "'DM Sans', sans-serif", resize: 'vertical', lineHeight: 1.6 }
   const labelStyle: React.CSSProperties = { fontFamily: "'DM Sans', sans-serif", fontSize: 10, fontWeight: 600, color: 'var(--text-dim)', textTransform: 'uppercase', letterSpacing: '0.07em', display: 'block', marginBottom: 5 }
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
-      {projectMonths.map((m, mi) => {
+      {projectMonths.map((m, _mi) => {
         const mDays = projectDays.filter(d => d.month === m.monthNumber)
         const done  = mDays.filter(d => d.status === 'Complete').length
         const pctM  = mDays.length ? Math.round(done / mDays.length * 100) : 0

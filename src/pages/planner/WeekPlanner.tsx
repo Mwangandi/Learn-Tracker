@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useProject } from '@/contexts/ProjectContext'
-import Card from '@/components/Card'
 import ProgressBar from '@/components/ProgressBar'
 
 const MONTH_COLORS = ['#10b981', '#f97316', '#a855f7']

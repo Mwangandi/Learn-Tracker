@@ -20,7 +20,7 @@ const Dashboard: React.FC = () => {
     const total    = projectDays.length
     const complete = projectDays.filter(d => d.status === 'Complete').length
     const inProg   = projectDays.filter(d => d.status === 'In Progress').length
-    const blocked  = projectDays.filter(d => d.status === 'Blocrtd').length
+    const blocked  = projectDays.filter(d => d.status === 'Blocked').length
     const todo     = projectDays.filter(d => d.status === 'To Do').length
 
     const byWeek = Array.from({ length: 12 }, (_, i) => {

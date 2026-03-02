@@ -1,7 +1,8 @@
-import React from 'react'
-import type { TooltipProps } from 'recharts'
-
-const ChartTooltip: React.FC<TooltipProps<number, string>> = ({ active, payload, label }) => {
+const ChartTooltip = ({ active, payload, label}: {
+    active?: boolean
+    payload?: Array<{name: string; value: number; color?: string}>
+    label?: string
+}) => {
   if (!active || !payload?.length) return null
   return (
     <div style={{
@@ -10,7 +11,7 @@ const ChartTooltip: React.FC<TooltipProps<number, string>> = ({ active, payload,
       fontFamily: "'DM Sans', sans-serif", boxShadow: 'var(--shadow)',
     }}>
       <div style={{ color: 'var(--text-mid)', fontSize: 11, marginBottom: 6 }}>{label}</div>
-      {payload.map((p, i) => (
+      {payload?.map((p: {name: string; value: number; color?: string}, i: number) => (
         <div key={i} style={{ color: p.color, fontSize: 12, fontWeight: 600 }}>
           {p.name}: {p.value}
         </div>

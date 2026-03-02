@@ -3,7 +3,7 @@ import React, {
 } from 'react'
 import type {
   ProjectId, ProjectMeta, DayPlan, WeekPlan, MonthPlan, QuarterPlan,
-  StatusKey, SectionId,
+  SectionId,
 } from '@/types'
 import {
   PROJECTS, buildInitialDays, buildInitialWeeks,
